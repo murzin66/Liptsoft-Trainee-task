@@ -1,11 +1,13 @@
 import Footer from "../../components/footer/footer";
 import Header from "../../components/header/header";
+import { useAppDispatch } from "../../hooks";
+import { fetchActionPrice } from "../../store/api-actions";
 import "./main-page.css";
 
 function MainPage () {
+  const dispatch = useAppDispatch();
   const handleActionChange = (action: string) => {
-    console.log("изменение акции на");
-    console.log(action);
+    dispatch (fetchActionPrice(action));
   }
   return (
     <div id = "content-container">
