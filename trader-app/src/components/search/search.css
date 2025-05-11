@@ -1,0 +1,19 @@
+.search-form{
+  padding: 0.6%;
+  margin-left: 10%;
+  font-size: 1rem;
+  text-align: center;
+}
+.search-button{
+  margin-left: 2%;
+  padding: 0.6%;
+  background-color:white;
+  border-radius: 15%;
+  border-color: white;
+  font-size: 1rem;
+  text-align: center;
+}
+.search-button:hover{
+  background-color: rgb(218, 65, 85);
+  color:white;
+}
