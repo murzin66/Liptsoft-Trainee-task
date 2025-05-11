@@ -7,17 +7,24 @@ const initialState: ActionList = [
   {
     charsetinfo: ""
   },
+
   {
     securities: [],
+  },
+  {
+    currentAction: "SBER",
   }
-
 ]
 
 
 export const actionListProcess = createSlice ({
   name:NAMESPACE.LIST,
   initialState,
-  reducers:{},
+  reducers:{
+    changeCurrentAction: (state, action: {payload:string})=> {
+      state[2].currentAction = action.payload;
+    }
+  },
   extraReducers(builder){
     builder
       .addCase(fetchActionList.fulfilled, (state, action)=> {
@@ -27,4 +34,6 @@ export const actionListProcess = createSlice ({
         state[1].securities = [];
       })
   }
-})
+});
+
+export const {changeCurrentAction} = actionListProcess.actions;

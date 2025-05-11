@@ -6,23 +6,28 @@ export type ActionList = [
 },
 {
   securities:Action[],
-}]
+},
+{
+  currentAction:string,
+},
 
-type Action = {
+]
+
+export type Action = {
   SECID: string,
   BOARDID: string,
   SHORTNAME: string,
   PREVPRICE: number
 }
 
-type SeriesInfo = {
+export type SeriesInfo = {
     open_time: number,
     close_time:number,
     value: number,
     open_time_x: number,
     open_time_y: number
 }
-type GraphInfo = {
+export type GraphInfo = {
   left: number,
   top: number,
   right: number,
@@ -39,9 +44,11 @@ type GraphInfo = {
     ]
   },
   series: [
+    {
     id: string,
     type: string,
     candles: SeriesInfo[],
+  }
   ]
 
 }
